@@ -2,7 +2,7 @@
 Type=Application
 Name=System Update
 Comment=Update System, Flatpaks, Distrobox containers, and more
-Icon=ublue-update
+Icon=system-software-update
 Categories=ConsoleOnly;System;
 Terminal=true
 Exec=/usr/bin/ujust update
