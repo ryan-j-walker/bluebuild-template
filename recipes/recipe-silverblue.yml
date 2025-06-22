@@ -34,7 +34,6 @@ modules:
           - ublue-os/packages
     install:
       packages:
-        # - code
         - firewall-config
         - fuse-encfs
         - gnome-tweaks
@@ -137,7 +136,8 @@ modules:
   - type: script
     snippets:
       - "sed -i 's/AutomaticUpdatePolicy=.*/AutomaticUpdatePolicy=none/g' /etc/rpm-ostreed.conf" # Disable automatic updates per uupd instructions
-      - "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/vscode.repo"
+      - "curl -s https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/system_files/shared/usr/bin/podman-host -o /usr/bin/podman-host"
+      - "chmod +x /usr/bin/podman-host"
     scripts:
       - theming.sh
 
