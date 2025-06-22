@@ -46,11 +46,11 @@ modules:
     remove:
       auto-remove: true
       packages:
-        - firefox
-        - firefox-langpacks
+        - fedora-bookmarks
         - firefox
         - firefox-langpacks
         - gnome-shell-extension-background-logo
+        - yelp
 
   - type: brew
     auto-update: true # enable auto-updates
