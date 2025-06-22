@@ -21,20 +21,3 @@ shopt -u extglob
 find "${THEMEDIR}" -name '*.build' -type f -delete
 gtk-update-icon-cache -f -t "${THEMEDIR}" && xdg-desktop-menu forceupdate
 rm -rf MoreWaita-main/ main.zip
-
-# Download Vimix Cursors
-wget https://github.com/vinceliuice/Vimix-cursors/archive/master.zip
-unzip master.zip
-
-if [ -d "$DEST_DIR/Vimix-cursors" ]; then
-  rm -rf "$DEST_DIR/Vimix-cursors"
-fi
-
-if [ -d "$DEST_DIR/Vimix-white-cursors" ]; then
-  rm -rf "$DEST_DIR/Vimix-white-cursors"
-fi
-
-cp -r Vimix-cursors-master/dist/ $DEST_DIR/Vimix-cursors
-cp -r Vimix-cursors-master/dist-white/ $DEST_DIR/Vimix-white-cursors
-
-rm -rf Vimix-cursors-master/ master.zip
