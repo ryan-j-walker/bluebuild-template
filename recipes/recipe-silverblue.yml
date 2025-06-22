@@ -34,6 +34,7 @@ modules:
           - ublue-os/packages
     install:
       packages:
+        - code
         - firewall-config
         - fuse-encfs
         - gnome-tweaks
@@ -89,7 +90,6 @@ modules:
         - com.github.wwmm.easyeffects
         - com.makemkv.MakeMKV
         - com.mattjakeman.ExtensionManager
-        - com.visualstudio.code
         - dev.heppen.webapps
         - io.github.dvlv.boxbuddyrs
         - io.github.flattool.Ignition
@@ -126,8 +126,7 @@ modules:
   - type: script
     snippets:
       - "sed -i 's/AutomaticUpdatePolicy=.*/AutomaticUpdatePolicy=none/g' /etc/rpm-ostreed.conf" # Disable automatic updates per uupd instructions
-      - "curl -s https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/system_files/shared/usr/bin/podman-host -o /usr/bin/podman-host"
-      - "chmod +x /usr/bin/podman-host"
+      - "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/vscode.repo"
     scripts:
       - theming.sh
 
