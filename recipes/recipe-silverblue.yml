@@ -34,12 +34,22 @@ modules:
           - ublue-os/packages
     install:
       packages:
-        - code
+        # - code
         - firewall-config
         - fuse-encfs
         - gnome-tweaks
+        - libxcrypt-compat
         - podman-compose
         - powertop
+        - qemu
+        - qemu-char-spice
+        - qemu-device-display-virtio-gpu
+        - qemu-device-display-virtio-vga
+        - qemu-device-usb-redirect
+        - qemu-img
+        - qemu-system-x86-core
+        - qemu-user-binfmt
+        - qemu-user-static
         - samba
         - setools-console
         - uupd
@@ -90,6 +100,7 @@ modules:
         - com.github.wwmm.easyeffects
         - com.makemkv.MakeMKV
         - com.mattjakeman.ExtensionManager
+        - com.visualstudio.code
         - dev.heppen.webapps
         - io.github.dvlv.boxbuddyrs
         - io.github.flattool.Ignition
