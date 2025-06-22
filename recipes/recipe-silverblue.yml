@@ -37,7 +37,6 @@ modules:
         - firewall-config
         - fuse-encfs
         - gnome-tweaks
-        - gum
         - iwd
         - podman-compose
         - powertop
