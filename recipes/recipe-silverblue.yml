@@ -99,9 +99,9 @@ modules:
         - com.github.wwmm.easyeffects
         - com.makemkv.MakeMKV
         - com.mattjakeman.ExtensionManager
+        - com.ranfdev.DistroShelf
         - com.visualstudio.code
         - dev.heppen.webapps
-        - io.github.dvlv.boxbuddyrs
         - io.github.flattool.Ignition
         - io.github.flattool.Warehouse
         - io.missioncenter.MissionCenter
@@ -132,6 +132,9 @@ modules:
         - flatpak-system-update.timer
       enabled:
         - uupd.timer
+    user:
+      enabled:
+        - podman.socket
   
   - type: script
     snippets:
