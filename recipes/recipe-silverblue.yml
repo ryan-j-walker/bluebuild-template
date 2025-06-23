@@ -14,17 +14,17 @@ modules:
       - source: system/shared
         destination: /
 
-  - from-file: common-recipes/common-fonts.yml
-  - from-file: common-recipes/common-packages.yml
-  - from-file: common-recipes/common-homebrew.yml
+  - from-file: common-recipes/fonts.yml
+  - from-file: common-recipes/packages.yml
+  - from-file: common-recipes/homebrew.yml
   - from-file: silverblue/gnome-extensions.yml
-  - from-file: common-recipes/common-flatpaks.yml
-  - from-file: common-recipes/common-systemd.yml
+  - from-file: common-recipes/flatpaks.yml
+  - from-file: common-recipes/systemd.yml
   
   - type: script
     scripts:
       - silverblue/theming.sh
-      - common-scripts/common-cleanup.sh
+      - common-scripts/cleanup.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
