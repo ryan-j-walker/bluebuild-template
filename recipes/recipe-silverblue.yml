@@ -16,7 +16,7 @@ modules:
 
   - from-file: common-recipes/common-fonts.yml
   - from-file: common-recipes/common-packages.yml
-  - from-file: common-recipes/homebrew.yml
+  - from-file: common-recipes/common-homebrew.yml
   - from-file: silverblue/gnome-extensions.yml
   - from-file: common-recipes/common-flatpaks.yml
   - from-file: common-recipes/common-systemd.yml
