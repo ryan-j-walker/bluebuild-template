@@ -3,6 +3,7 @@ repos:
   cleanup: true
   copr:
     enable:
+      - trixieua/morewaita-icon-theme
       - ublue-os/packages
 install:
   packages:
@@ -10,6 +11,7 @@ install:
     - fuse-encfs
     - gnome-tweaks
     - libxcrypt-compat
+    - morewaita-icon-theme
     - podman-compose
     - powertop
     - qemu
