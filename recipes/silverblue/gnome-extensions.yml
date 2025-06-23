@@ -1,0 +1,14 @@
+type: gnome-extensions
+install:
+  - Alphabetical App Grid
+  - AppIndicator and KStatusNotifierItem Support
+  - Blur my Shell
+  - Coverflow Alt-Tab
+  - Dash to Panel
+  - Just Perfection
+  - OSD Volume Number
+  - Quick Settings Audio Devices Hider
+  - Quick Settings Audio Panel
+  - Search Light
+  - Tiling Assistant
+  - Weather O'Clock

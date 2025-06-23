@@ -2,147 +2,29 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: silverblue
-# description will be included in the image's metadata
-description: Universal Blue silverblue-main with my tweaks.
 
-# the base image to build on top of (FROM) and the version tag to use
+description: Universal Blue's silverblue-main with my tweaks.
+
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+      - source: system/shared
+        destination: /
 
-  - type: fonts
-    fonts:
-      google-fonts:
-        - Noto Sans
-        - Noto Sans Mono
-        - Noto Serif
-      nerd-fonts:
-        - FiraCode
-  
-  - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        enable:
-          - ublue-os/packages
-    install:
-      packages:
-        - firewall-config
-        - fuse-encfs
-        - gnome-tweaks
-        - libxcrypt-compat
-        - podman-compose
-        - powertop
-        - qemu
-        - qemu-char-spice
-        - qemu-device-display-virtio-gpu
-        - qemu-device-display-virtio-vga
-        - qemu-device-usb-redirect
-        - qemu-img
-        - qemu-system-x86-core
-        - qemu-user-binfmt
-        - qemu-user-static
-        - samba
-        - setools-console
-        - uupd
-    remove:
-      auto-remove: true
-      packages:
-        - fedora-bookmarks
-        - firefox
-        - firefox-langpacks
-        - gnome-shell-extension-background-logo
-        - yelp
-
-  - type: brew
-    auto-update: true # enable auto-updates
-    update-interval: 6h
-    auto-upgrade: true # enable auto-upgrades
-    upgrade-interval: 6h
-    brew-analytics: false # disable telemetry
-    nofile-limits: true # increase nofile limits
-  
-  - type: gnome-extensions
-    install:
-      - Alphabetical App Grid
-      - AppIndicator and KStatusNotifierItem Support
-      - Blur my Shell
-      - Coverflow Alt-Tab
-      - Dash to Panel
-      - Just Perfection
-      - OSD Volume Number
-      - Quick Settings Audio Devices Hider
-      - Quick Settings Audio Panel
-      - Search Light
-      - Tiling Assistant
-      - Weather O'Clock
-  
-  - type: default-flatpaks
-    notify: true
-    user:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-name: flathub
-      repo-title: Flathub
-      install:
-        - ca.desrt.dconf-editor
-        - com.github.PintaProject.Pinta
-        - com.github.iwalton3.jellyfin-media-player
-        - com.github.rafostar.Clapper
-        - com.github.tchx84.Flatseal
-        - com.github.wwmm.easyeffects
-        - com.makemkv.MakeMKV
-        - com.mattjakeman.ExtensionManager
-        - com.ranfdev.DistroShelf
-        - com.visualstudio.code
-        - dev.heppen.webapps
-        - io.github.flattool.Ignition
-        - io.github.flattool.Warehouse
-        - io.missioncenter.MissionCenter
-        - io.podman_desktop.PodmanDesktop
-        - me.iepure.devtoolbox
-        - org.gnome.Calculator
-        - org.gnome.Calendar
-        - org.gnome.Characters
-        - org.gnome.FileRoller
-        - org.gnome.Firmware
-        - org.gnome.Logs
-        - org.gnome.Loupe
-        - org.gnome.NautilusPreviewer
-        - org.gnome.Papers
-        - org.gnome.TextEditor
-        - org.gnome.Weather
-        - org.gnome.baobab
-        - org.gnome.clocks
-        - org.gnome.font-viewer
-        - org.gtk.Gtk3theme.adw-gtk3
-        - org.gtk.Gtk3theme.adw-gtk3-dark
-        - page.tesk.Refine
-        - sh.loft.devpod
-  
-  - type: systemd
-    system:
-      disabled:
-        - flatpak-system-update.timer
-      enabled:
-        - uupd.timer
-    user:
-      enabled:
-        - podman.socket
+  - from-file: common-recipes/common-fonts.yml
+  - from-file: common-recipes/common-packages.yml
+  - from-file: common-recipes/homebrew.yml
+  - from-file: silverblue/gnome-extensions.yml
+  - from-file: common-recipes/common-flatpaks.yml
+  - from-file: common-recipes/common-systemd.yml
   
   - type: script
-    snippets:
-      - "sed -i 's/AutomaticUpdatePolicy=.*/AutomaticUpdatePolicy=none/g' /etc/rpm-ostreed.conf" # Disable automatic updates per uupd instructions
-      - "curl -s https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/system_files/shared/usr/bin/podman-host -o /usr/bin/podman-host"
-      - "chmod +x /usr/bin/podman-host"
     scripts:
-      - theming.sh
+      - silverblue/theming.sh
+      - common-scripts/common-cleanup.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

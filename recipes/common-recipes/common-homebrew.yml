@@ -1,0 +1,7 @@
+type: brew
+auto-update: true # enable auto-updates
+update-interval: 6h
+auto-upgrade: true # enable auto-upgrades
+upgrade-interval: 6h
+brew-analytics: false # disable telemetry
+nofile-limits: true # increase nofile limits
