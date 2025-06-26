@@ -1,0 +1,28 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: bazzite
+
+description: Universal Blue's bazzite-gnome with my tweaks.
+
+base-image: ghcr.io/ublue-os/bazzite-gnome
+image-version: latest
+
+modules:
+  # - type: files
+  #   files:
+  #     - source: system
+  #       destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  # - from-file: bazzite-gnome/fonts.yml
+  - from-file: bazzite-gnome/packages.yml
+  # - from-file: bazzite-gnome/homebrew.yml
+  # - from-file: bazzite-gnome/gnome-extensions.yml
+  # - from-file: bazzite-gnome/flatpaks.yml
+  # - from-file: bazzite-gnome/systemd.yml
+  
+  # - type: script
+  #   scripts:
+  #     - common-scripts/cleanup.sh
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
