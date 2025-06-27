@@ -1,7 +1,6 @@
 type: dnf
 install:
   packages:
-    - gtk3-nocsd
     - kvantum
     - papirus-icon-theme
     - podman-compose
