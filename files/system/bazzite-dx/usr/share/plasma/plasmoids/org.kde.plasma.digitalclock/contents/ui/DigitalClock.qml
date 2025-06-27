@@ -249,7 +249,7 @@ MouseArea {
                 target: contentItem
 
                 height: sizehelper.height
-                width: dateLabel.width + labelsGrid.width + timeMetrics.advanceWidth(" ") * 1 + separator.width
+                width: dateLabel.width + labelsGrid.width + timeMetrics.advanceWidth(" ") * 1
             }
 
             AnchorChanges {
