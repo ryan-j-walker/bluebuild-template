@@ -1,4 +1,6 @@
 type: dnf
 install:
   packages:
+    - kvantum
+    - papirus-icon-theme
     - podman-compose
