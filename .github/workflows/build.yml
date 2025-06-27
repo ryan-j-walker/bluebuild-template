@@ -28,7 +28,7 @@ jobs:
         recipe:
           # !! Add your recipes here
           - recipe-bazzite-dx.yml
-          - recipe-silverblue.yml
+          # - recipe-silverblue.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

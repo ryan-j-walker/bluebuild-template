@@ -9,17 +9,9 @@ base-image: ghcr.io/ublue-os/bazzite-dx
 image-version: latest
 
 modules:
-  # - type: files
-  #   files:
-  #     - source: system
-  #       destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - from-file: bazzite-dx/fonts.yml
-  # - from-file: bazzite-dx/flatpaks.yml
-  # - from-file: bazzite-dx/systemd.yml
-  
-  - type: script
-    snippets:
-      - "flatpak override --system --device=dri"
+  - from-file: bazzite-dx/packages.yml
+  - from-file: bazzite-dx/flatpaks.yml
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
