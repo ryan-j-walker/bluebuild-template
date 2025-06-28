@@ -9,10 +9,10 @@ base-image: ghcr.io/ublue-os/bazzite-dx
 image-version: latest
 
 modules:
-  - type: files
-    files:
-      - source: system/bazzite-dx
-        destination: /
+  # - type: files
+  #   files:
+  #     - source: system/bazzite-dx
+  #       destination: /
 
   - from-file: bazzite-dx/fonts.yml
   - from-file: bazzite-dx/packages.yml
