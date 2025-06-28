@@ -9,15 +9,8 @@ base-image: ghcr.io/ublue-os/bazzite-dx
 image-version: latest
 
 modules:
-  # - type: files
-  #   files:
-  #     - source: system/bazzite-dx
-  #       destination: /
-
   - from-file: bazzite-dx/fonts.yml
   - from-file: bazzite-dx/packages.yml
   - from-file: bazzite-dx/flatpaks.yml
-
-  - type: initramfs
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
