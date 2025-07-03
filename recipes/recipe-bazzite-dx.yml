@@ -5,7 +5,7 @@ name: bazzite-dx
 
 description: Universal Blue's bazzite-dx with my tweaks.
 
-base-image: ghcr.io/ublue-os/bazzite-dx
+base-image: ghcr.io/ublue-os/bazzite-dx-nvidia-open
 image-version: latest
 
 modules:
