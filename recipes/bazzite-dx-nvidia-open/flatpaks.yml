@@ -10,3 +10,4 @@ system:
     - com.makemkv.MakeMKV
     - gg.minion.Minion
     - me.iepure.devtoolbox
+    - org.fedoraproject.MediaWriter
