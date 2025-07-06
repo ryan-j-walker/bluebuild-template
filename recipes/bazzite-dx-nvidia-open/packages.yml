@@ -6,5 +6,4 @@ remove:
     - fish
 install:
   packages:
-    - applet-window-buttons
     - goverlay
