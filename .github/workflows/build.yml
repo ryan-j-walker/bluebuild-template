@@ -27,7 +27,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          # - recipe.yml
+          # - recipe-bazzite-dx-nvidia-open.yml
           # - recipe-cosmic-atomic.yml
           - recipe-silverblue.yml
     steps:
