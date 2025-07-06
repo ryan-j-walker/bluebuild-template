@@ -12,5 +12,17 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - from-file: cosmic-atomic/fonts.yml
+  - from-file: cosmic-atomic/packages.yml
+  - from-file: shared/homebrew.yml
+  - from-file: cosmic-atomic/flatpaks.yml
+  - from-file: cosmic-atomic/systemd.yml
+
+  - type: script
+    scripts:
+      - shared/podman-host.sh
+      - shared/vscode.sh
+      - cosmic-atomic/cleanup.sh
+      
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 

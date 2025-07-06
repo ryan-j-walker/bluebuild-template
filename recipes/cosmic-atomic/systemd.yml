@@ -1,0 +1,6 @@
+type: systemd
+system:
+  disabled:
+    - flatpak-system-update.timer
+  enabled:
+    - uupd.timer
