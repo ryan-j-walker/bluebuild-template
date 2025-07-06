@@ -1,0 +1,12 @@
+type: default-flatpaks
+notify: true
+system:
+  remove:
+    - org.mozilla.firefox
+  install:
+    - com.discordapp.Discord
+    - com.github.iwalton3.jellyfin-media-player
+    - com.github.wwmm.easyeffects
+    - com.makemkv.MakeMKV
+    - gg.minion.Minion
+    - me.iepure.devtoolbox
