@@ -8,7 +8,7 @@ on:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
 
-  pull_request:
+  # pull_request:
   workflow_dispatch: # allow manually triggering builds
 concurrency:
   # only run one build at a time
@@ -27,7 +27,8 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - recipe.yml
+          # - recipe.yml
+          # - recipe-cosmic-atomic.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
