@@ -1,0 +1,27 @@
+type: dnf
+repos:
+  cleanup: true
+  copr:
+    enable:
+      - ublue-os/packages
+group-install:
+  with-optional: true
+  packages:
+    - cosmic-desktop
+install:
+  packages:
+    - firewall-config
+    - fuse-encfs
+    - gnome-disk-utility
+    - gvfs-smb
+    - iwd
+    - podman-compose
+    - powertop
+    - samba
+    - setools-console
+    - uupd
+remove:
+  auto-remove: true
+  packages:
+    - firefox
+    - firefox-langpacks

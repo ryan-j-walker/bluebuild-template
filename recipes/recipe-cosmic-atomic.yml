@@ -1,0 +1,28 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: cosmic-atomic
+# description will be included in the image's metadata
+description: Universal Blue's base-main image with Cosmic desktop installed along with my tweaks.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/base-main
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: cosmic-atomic/fonts.yml
+  - from-file: cosmic-atomic/packages.yml
+  - from-file: shared/homebrew.yml
+  - from-file: cosmic-atomic/flatpaks.yml
+  - from-file: cosmic-atomic/systemd.yml
+
+  - type: script
+    scripts:
+      - shared/podman-host.sh
+      - shared/vscode.sh
+      - cosmic-atomic/cleanup.sh
+      
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+
