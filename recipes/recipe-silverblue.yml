@@ -1,0 +1,34 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: silverblue
+# description will be included in the image's metadata
+description: Universal Blue's silverblue-main with my tweaks.
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: files
+    files:
+      - source: system/shared
+        destination: /
+
+  - from-file: silverblue/fonts.yml
+  - from-file: silverblue/packages.yml
+  - from-file: shared/homebrew.yml
+  - from-file: silverblue/gnome-extensions.yml
+  - from-file: silverblue/flatpaks.yml
+  - from-file: silverblue/systemd.yml
+  
+  - type: script
+    scripts:
+      - shared/podman-host.sh
+      - shared/vscode.sh
+      - silverblue/cleanup.sh
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+

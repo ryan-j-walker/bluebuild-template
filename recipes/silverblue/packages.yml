@@ -1,0 +1,36 @@
+type: dnf
+repos:
+  cleanup: true
+  copr:
+    enable:
+      - trixieua/morewaita-icon-theme
+      - ublue-os/packages
+install:
+  packages:
+    - firewall-config
+    - fuse-encfs
+    - gnome-tweaks
+    - libxcrypt-compat
+    - morewaita-icon-theme
+    - podman-compose
+    - powertop
+    - qemu
+    - qemu-char-spice
+    - qemu-device-display-virtio-gpu
+    - qemu-device-display-virtio-vga
+    - qemu-device-usb-redirect
+    - qemu-img
+    - qemu-system-x86-core
+    - qemu-user-binfmt
+    - qemu-user-static
+    - samba
+    - setools-console
+    - uupd
+remove:
+  auto-remove: true
+  packages:
+    - fedora-bookmarks
+    - firefox
+    - firefox-langpacks
+    - gnome-shell-extension-background-logo
+    - yelp
