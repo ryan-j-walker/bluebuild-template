@@ -11,4 +11,3 @@ system:
     - gg.minion.Minion
     - me.iepure.devtoolbox
     - org.fedoraproject.MediaWriter
-    - tech.feliciano.pocket-casts
