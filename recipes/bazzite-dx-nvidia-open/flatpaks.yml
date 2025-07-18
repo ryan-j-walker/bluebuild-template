@@ -11,3 +11,4 @@ system:
     - gg.minion.Minion
     - me.iepure.devtoolbox
     - org.fedoraproject.MediaWriter
+    - org.kde.kasts
