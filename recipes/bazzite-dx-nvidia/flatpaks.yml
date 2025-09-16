@@ -3,7 +3,7 @@ configurations:
   - notify: true
   - scope: user
   - repo:
-        # you can override the title to make inclusion of both system and user repos clearer
+      # you can override the title to make inclusion of both system and user repos clearer
       title: Flathub (User)
   - install:
       - com.discordapp.Discord
@@ -12,7 +12,6 @@ configurations:
       - gg.minion.Minion
       - me.iepure.devtoolbox
       - org.fedoraproject.MediaWriter
-
   - scope: system
   - remove:
       - org.mozilla.firefox
