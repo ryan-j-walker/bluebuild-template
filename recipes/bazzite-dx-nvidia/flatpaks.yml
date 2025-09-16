@@ -1,12 +1,12 @@
 type: default-flatpaks
 notify: true
-system:
-  remove:
-    - org.mozilla.firefox
-  install:
+scope: system
+install:
     - com.discordapp.Discord
     - com.github.iwalton3.jellyfin-media-player
     - com.makemkv.MakeMKV
     - gg.minion.Minion
     - me.iepure.devtoolbox
     - org.fedoraproject.MediaWriter
+remove:
+  - org.mozilla.firefox
