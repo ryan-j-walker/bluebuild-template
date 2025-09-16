@@ -4,7 +4,7 @@ configurations:
   - scope: user
   - repo:
         # you can override the title to make inclusion of both system and user repos clearer
-      - title: Flathub (User)
+      title: Flathub (User)
   - install:
       - com.discordapp.Discord
       - com.github.iwalton3.jellyfin-media-player
