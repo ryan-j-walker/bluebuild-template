@@ -14,6 +14,21 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - from-file: bazzite-dx-nvidia/fonts.yml
   - from-file: bazzite-dx-nvidia/packages.yml
-  - from-file: bazzite-dx-nvidia/flatpaks.yml
+  # - from-file: bazzite-dx-nvidia/flatpaks.yml
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+          - com.discordapp.Discord
+          - com.github.iwalton3.jellyfin-media-player
+          - com.makemkv.MakeMKV
+          - gg.minion.Minion
+          - me.iepure.devtoolbox
+          - org.fedoraproject.MediaWriter
+        remove:
+          - org.mozilla.firefox
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
