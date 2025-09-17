@@ -4,6 +4,7 @@ remove:
   packages:
     - ffmpeg
     - fish
+    - kate
 install:
   packages:
     - goverlay
