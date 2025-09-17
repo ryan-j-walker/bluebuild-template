@@ -1,6 +1,0 @@
-type: default-flatpaks
-configurations:
-  - notify: true
-  - scope: system
-  - remove:
-      - org.mozilla.firefox
