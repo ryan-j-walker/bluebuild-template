@@ -5,6 +5,7 @@ remove:
     - ffmpeg
     - fish
     - kate
+    - sunshine
 install:
   packages:
     - goverlay
