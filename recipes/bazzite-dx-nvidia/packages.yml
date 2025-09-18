@@ -6,6 +6,7 @@ remove:
     - fish
     - kate
     - sunshine
+    - waydroid
 install:
   packages:
     - goverlay
