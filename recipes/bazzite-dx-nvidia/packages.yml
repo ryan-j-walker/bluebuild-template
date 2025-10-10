@@ -1,0 +1,12 @@
+type: dnf
+remove:
+  auto-remove: true
+  packages:
+    - ffmpeg
+    - fish
+    - kate
+    - sunshine
+    - waydroid
+install:
+  packages:
+    - goverlay
