@@ -5,7 +5,7 @@ remove:
     - ffmpeg
     - fish
     - kate
-    - sunshine
+    - Sunshine
     - waydroid
 install:
   packages:
